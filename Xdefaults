@@ -1,0 +1,67 @@
+!!!!!!! URXVT
+urxvt*geometry:          80x25
+urxvt*inheritPixmap:     false
+urxvt*reverseVideo:      false
+urxvt*scrollBar:         false
+urxvt*saveLines:         65535
+
+urxvt.font:  xft:Source Code Pro:size=10
+! urxvt.font:  xft:Inconsolata:size=10
+
+urxvt*cursorColor:       #DCDCDC
+urxvt*.colorUL:          #ffffff
+
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define #93A1A1         #93a1a1
+#define #EEE8D5         #eee8d5
+#define #FDF6E3         #fdf6e3
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define #D33682       #d33682
+#define #6C71C4        #6c71c4
+#define S_blue          #268bd2
+#define #2AA198          #2aa198
+#define S_green         #859900
+
+urxvt*background:       #002B36
+urxvt*foreground:       #839496
+urxvt*fading:           40
+urxvt*fadeColor:        #002B36
+urxvt*cursorColor:      #93A1A1
+urxvt*pointerColorBackground: #586E75
+urxvt*pointerColorForeground: #93A1A1
+urxvt*color0:           #073642
+urxvt*color8:           #002B36
+urxvt*color1:           #DC322F
+urxvt*color9:           #CD4B16
+urxvt*color2:           #859900
+urxvt*color10:          #586E75
+urxvt*color3:           #B58900
+urxvt*color11:          #657B83
+urxvt*color4:           #268BD2
+urxvt*color12:          #839496
+urxvt*color5:           #D33682
+urxvt*color13:          #6C71C4
+urxvt*color6:           #2AA198
+urxvt*color14:          #93A1A1
+urxvt*color7:           #EEE8D5
+urxvt*color15:          #FDF6E3
+
+!!!!!!!! XFT
+Xft.dpi:       109
+Xft.antialias: 1
+Xft.hinting:   0
+!Xft.hintstyle: hintfull
+Xft.rgba:      rgb
+
+!!!!!!!! XPDF
+xpdf*foreground:     black
+xpdf*background:     white
+xpdf*urlCommand:     /users/j3parker/bin/web %s
+xpdf*antialias:      yes
+xpdf*enableFreetype: yes

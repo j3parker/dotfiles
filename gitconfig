@@ -1,0 +1,5 @@
+[user]
+  name = Jacob Parker
+  email = j@cob.xxx
+[core]
+  editor = /usr/bin/vim
