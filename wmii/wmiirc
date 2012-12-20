@@ -194,7 +194,7 @@ Key $MODKEY-p      # Open program menu
 Key $MODKEY-Return # Launch a terminal
 	eval wmiir setsid $WMII_TERM &
 Key $MODKEY-w
-  eval wmiir setsid "/users/j3parker/bin/web"
+  eval wmiir setsid "$HOME/bin/web"
 
 KeyGroup Other
 Key $MODKEY-Control-t # Toggle all other key bindings
