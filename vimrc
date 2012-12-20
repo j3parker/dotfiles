@@ -13,6 +13,7 @@ set scrolloff=5
 set nostartofline
 set shell=bash
 set textwidth=80
+set nofoldenable
 
 " Theming
 syntax enable
