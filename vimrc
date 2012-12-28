@@ -80,4 +80,19 @@ command Wq wq
 command W w
 command Q q
 
+" Indent paragraph
 nnoremap Q gq}
+
+" Restore cursor to previous position when a file is loaded
+set viminfo='25,\"100,:20,%,n~/.viminfo
+function! ResCur()
+  if line("'\"") <= line("$")
+    normal! g`"
+    return 1
+  endif
+endfunction
+
+augroup resCur
+  autocmd!
+  autocmd BufWinEnter * call ResCur()
+augroup END
