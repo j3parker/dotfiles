@@ -16,11 +16,25 @@ alias secs='date +%s'
 alias ls='ls -plG'
 
 # Prompt
-export PS1="\[\e[0;32m\]\h\[\e[m\]\[\e[0;0m\].\[\e[m\]\[\e[0;34m\]\u\[\e[m\] in \[\e[0;36m\]\W\[\e[m\]: "
+HOST=`uname -n`
+case $HOST in
+"caffeine") HOST=csc;;
+"high-fructose-corn-syrup") HOST=hfcs;;
+"artificial-flavours") HOST=af;;
+"maltodextrin") HOST=malto;;
+"natural-flavours") HOST=natf;;
+"bit-shifter") HOST=bs;;
+"corn-syrup") HOST=cs;;
+esac
+# This was a funny way to achieve part of the above
+# HOST=`uname -n`
+# export HOST=$(grep -e "^`grep -e "^[^\ ]*\ $HOST" /etc/hosts | head -n 1 | sed -e "s/\ .*//"`" /etc/hosts | sed -e "s/.*\ //" | while read line ; do if [[ ${line:0:1} == ${HOST:0:1} ]]; then echo $line; fi; done | awk '{ print length, $0 }' | sort -n | awk '{$1=""; print $0}' | head -n 1 | sed -e 's/^\ //')
+
+export PS1="\[\e[0;32m\]$HOST\[\e[m\]\[\e[0;0m\].\[\e[m\]\[\e[0;34m\]\u\[\e[m\] in \[\e[0;36m\]\W\[\e[m\]: "
 
 # PATH
 export PATH=/users/j3parker/bin:/users/j3parker/opt/bin:/users/j3parker/opt/usr/local/bin:$PATH:/users/j3parker/opt/node/bin
 
 # Other environment variables
-EDITOR=vim
-VISUAL=vim
+export EDITOR=vim
+export VISUAL=vim
