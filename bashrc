@@ -19,8 +19,10 @@ source ~/.git-completion.sh
 source ~/.git-prompt.sh
 
 # Prompt
+
 HOST=`uname -n`
 case $HOST in
+"iMac.local") HOST=iMac;;
 "caffeine") HOST=csc;;
 "high-fructose-corn-syrup") HOST=hfcs;;
 "artificial-flavours") HOST=af;;
@@ -33,7 +35,7 @@ esac
 # HOST=`uname -n`
 # export HOST=$(grep -e "^`grep -e "^[^\ ]*\ $HOST" /etc/hosts | head -n 1 | sed -e "s/\ .*//"`" /etc/hosts | sed -e "s/.*\ //" | while read line ; do if [[ ${line:0:1} == ${HOST:0:1} ]]; then echo $line; fi; done | awk '{ print length, $0 }' | sort -n | awk '{$1=""; print $0}' | head -n 1 | sed -e 's/^\ //')
 
-export PS1='\[\e[0;34m\]$HOST\[\e[m\]\[\e[0;0m\]\[\e[m\].\[\e[0;92m\]\W\[\e[0;95m\]$(__git_ps1 " %s")\[\e[m\]: '
+export PS1='\[\e[0;36m\]\u\[\e[0;30m\]:\[\e[0;33m\]$HOST\[\e[m\]\[\e[0;0m\]\[\e[m\]$(__git_ps1 "\[\e[0;30m\]:\[\e[0;31m\]%s")\[\e[0;30m\]:\[\e[m\]\w\n$ '
 
 # PATH
 export PATH=/users/j3parker/bin:/users/j3parker/opt/bin:/users/j3parker/opt/usr/local/bin:$PATH:/users/j3parker/opt/node/bin
