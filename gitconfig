@@ -3,3 +3,10 @@
   email = j@cob.xxx
 [core]
   editor = /usr/bin/vim
+[alias]
+	co = checkout
+	br = branch
+	st = status
+	ci = commit
+	unstage = reset HEAD --
+	last = log -p -1 HEAD
