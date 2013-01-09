@@ -69,7 +69,12 @@ nnoremap : ;
 " Highlight current line
 set cul
 
-call togglebg#map("<C-c>")
+" Insert mode moving
+imap <C-e> <esc>$i<right>
+imap <C-a> <esc>0i
+
+" Insert semicolon at end of line from command mode
+nmap : ;s/\([^;]\)$/\1;/<enter>
 
 " CTags
 set tags=tags;/
