@@ -30,7 +30,7 @@ urxvt*.colorUL:          #ffffff
 
 urxvt*background:       #002B36
 urxvt*foreground:       #839496
-urxvt*fading:           40
+urxvt*fading:           25
 urxvt*fadeColor:        #002B36
 urxvt*cursorColor:      #93A1A1
 urxvt*pointerColorBackground: #586E75
