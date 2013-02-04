@@ -8,3 +8,4 @@ do
   ln -s ./dotfiles/$f ./.$f
 done
 source ~/.bashrc
+source ~/.xinitrc

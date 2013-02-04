@@ -14,6 +14,7 @@ shopt -s checkwinsize
 # Aliases
 alias secs='date +%s'
 alias ls='ls -plG'
+alias sl=ls
 
 source ~/.git-completion.sh
 source ~/.git-prompt.sh
@@ -44,5 +45,4 @@ export PATH=/users/j3parker/bin:/users/j3parker/opt/bin:/users/j3parker/opt/usr/
 export EDITOR=vim
 export VISUAL=vim
 
-xmodmap ~/.Xmodmap
 set -o vi
