@@ -43,3 +43,6 @@ export PATH=/users/j3parker/bin:/users/j3parker/opt/bin:/users/j3parker/opt/usr/
 # Other environment variables
 export EDITOR=vim
 export VISUAL=vim
+
+xmodmap ~/.Xmodmap
+set -o vi

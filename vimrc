@@ -23,7 +23,7 @@ colorscheme solarized
 set tabstop=2
 set expandtab
 set smartindent
-set shiftwidth=2
+set shiftwidth=2 " XXX future version has sw=0 --> sw=ts, should adopt that
 
 " Searching
 set nohlsearch
@@ -32,20 +32,13 @@ set incsearch
 set ignorecase
 set smartcase
 
-" Makefiles
 au FileType make setl noexpandtab tabstop=4
-
-" Completion
-"set completeopt = menu,menuone,longest
-set pumheight =15
-let g:SuperTabDefaultCompletionType = "context"
-let g:clang_complete_auto = 0
-"let g:clang_complete_copen = 1
-let g:SuperTabClosePreviewOnPopupClose = 1
-set completeopt-=preview
-let g:SuperTabNoCompleteAfter = [',', '\s', ';', '/', '^']
+au FileType tpl setl expandtab tabstop=4
+au FileType php setl expandtab tabstop=4
+au FileType html setl expandtab tabstop=4
 
 " Automatically cd into the directory that the file is in
+" XXX maybe remove this because ctags? what about others?
 autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 
 " Remove any trailing whitespace that is in the file
@@ -62,19 +55,16 @@ if version >= 700
   set nospell
 endif
 
-" Swap ; and :  Convenient.
+" Swap ; and :
 nnoremap ; :
 nnoremap : ;
 
 " Highlight current line
 set cul
 
-" Insert mode moving
-imap <C-e> <esc>$i<right>
-imap <C-a> <esc>0i
-
-" Insert semicolon at end of line from command mode
-nmap : ;s/\([^;]\)$/\1;/<enter>
+" Insert semicolon/comma at end of line from command mode
+nmap : ;s/\([^;]\)$/\1;/e<enter><down>
+nmap , ;s/\([^,]\)$/\1,/e<enter><down>
 
 " CTags
 set tags=tags;/
