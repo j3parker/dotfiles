@@ -1,6 +1,22 @@
-" General
 set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'msanders/snipmate.vim'
+Bundle 'tpope/vim-sensible'
+Bundle 'airblade/vim-gitgutter'
+" To investigate:
+" tpope/vim-scriptease
+" tpope/vim-commentary
+" tpope/vim-fugitive
+" tpope/vim-git
+
+let snippets_dir = '/home/jparker/.vim/snippets'
 filetype plugin indent on
+
+" General
 set t_Co=256
 set nowrap
 set history=200
@@ -13,6 +29,7 @@ set scrolloff=5
 set nostartofline
 set shell=bash
 set nofoldenable
+let mapleader="\<space>"
 
 " Theming
 syntax enable
@@ -20,26 +37,22 @@ set background=dark
 colorscheme solarized
 
 " Indentation
-set tabstop=2
 set expandtab
 set smartindent
+set tabstop=2
 set shiftwidth=2 " XXX future version has sw=0 --> sw=ts, should adopt that
+au FileType make setl noexpandtab tabstop=4 sw=4
+au FileType tpl setl expandtab tabstop=4 sw=4
+au FileType php setl expandtab tabstop=4 sw=4
+au FileType html setl expandtab tabstop=4 sw=4
+au FileType javascript setl expandtab tabstop=4 sw=4
+
 
 " Searching
 set nohlsearch
 set showmatch
-set incsearch
 set ignorecase
 set smartcase
-
-au FileType make setl noexpandtab tabstop=4
-au FileType tpl setl expandtab tabstop=4
-au FileType php setl expandtab tabstop=4
-au FileType html setl expandtab tabstop=4
-
-" Automatically cd into the directory that the file is in
-" XXX maybe remove this because ctags? what about others?
-autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 
 " Remove any trailing whitespace that is in the file
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
@@ -61,13 +74,6 @@ nnoremap : ;
 
 " Highlight current line
 set cul
-
-" Insert semicolon/comma at end of line from command mode
-nmap : ;s/\([^;]\)$/\1;/e<enter><down>
-nmap , ;s/\([^,]\)$/\1,/e<enter><down>
-
-" CTags
-set tags=tags;/
 
 " Typo mitigation
 command WQ wq
@@ -91,3 +97,6 @@ augroup resCur
   autocmd!
   autocmd BufWinEnter * call ResCur()
 augroup END
+
+" sudo write
+noremap <Leader>w :w !sudo tee % > /dev/null
