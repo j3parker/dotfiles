@@ -13,7 +13,6 @@ shopt -s checkwinsize
 
 # Aliases
 alias secs='date +%s'
-alias ls='ls -plG'
 alias sl=ls
 
 source ~/.git-completion.sh
@@ -46,3 +45,5 @@ export EDITOR=vim
 export VISUAL=vim
 
 set -o vi
+
+source /users/j3parker/.rvm/scripts/rvm
