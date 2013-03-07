@@ -16,6 +16,7 @@ let snippets_dir = '~/.vim/snippets'
 filetype plugin indent on
 
 " General
+set undodir=/tmp
 set cm=blowfish
 set t_Co=256
 set nowrap
