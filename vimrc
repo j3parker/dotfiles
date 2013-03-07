@@ -1,22 +1,22 @@
-set nocompatible
-filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-sensible'
-Bundle 'airblade/vim-gitgutter'
+Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-markdown'
+
 " To investigate:
 " tpope/vim-scriptease
 " tpope/vim-commentary
-" tpope/vim-fugitive
-" tpope/vim-git
 
-let snippets_dir = '/home/jparker/.vim/snippets'
+let snippets_dir = '~/.vim/snippets'
 filetype plugin indent on
 
 " General
+set cm=blowfish
 set t_Co=256
 set nowrap
 set history=200
@@ -76,10 +76,10 @@ nnoremap : ;
 set cul
 
 " Typo mitigation
-command WQ wq
-command Wq wq
-command W w
-command Q q
+command! WQ wq
+command! Wq wq
+command! W w
+command! Q q
 
 " Indent paragraph
 nnoremap Q gq}
@@ -100,3 +100,17 @@ augroup END
 
 " sudo write
 noremap <Leader>w :w !sudo tee % > /dev/null
+noremap <Leader>s :source ~/.vimrc<Enter>
+noremap <Leader>gc :Gcommit<Enter>
+noremap <Leader>gd :Gdiff<Enter><C-w>h
+noremap <Leader>gg :diffget<Enter>
+noremap <Leader>gp :diffput<Enter>:diffupdate<Enter>
+noremap <Leader>gl :Git log<Enter>
+noremap <Leader>gr :Gread<Enter>
+noremap <Leader>gs :Gstatus<Enter>
+noremap <Leader>gw :Gwrite<Enter>
+noremap <Leader>h <C-w>h
+noremap <Leader>j <C-w>j
+noremap <Leader>k <C-w>k
+noremap <Leader>l <C-w>l
+noremap <Leader>q @q
