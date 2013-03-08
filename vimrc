@@ -104,7 +104,7 @@ noremap <Leader>w :w !sudo tee % > /dev/null
 noremap <Leader>s :source ~/.vimrc<Enter>
 noremap <Leader>gc :Gcommit<Enter>
 noremap <Leader>gd :Gdiff<Enter><C-w>h
-noremap <Leader>gg :diffget<Enter>
+noremap <Leader>gg :diffget<Enter>:diffupdate<Enter>
 noremap <Leader>gp :diffput<Enter>:diffupdate<Enter>
 noremap <Leader>gl :Git log<Enter>
 noremap <Leader>gr :Gread<Enter>
