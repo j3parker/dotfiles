@@ -5,7 +5,7 @@ urxvt*reverseVideo:      false
 urxvt*scrollBar:         false
 urxvt*saveLines:         65535
 
-urxvt.font:  xft:Source Code Pro:size=10
+urxvt.font:  xft:Source Code Pro:size=12
 ! urxvt.font:  xft:Inconsolata:size=10
 
 urxvt*cursorColor:       #DCDCDC

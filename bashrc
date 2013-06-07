@@ -38,7 +38,7 @@ esac
 export PS1='\[\e[0;36m\]\u\[\e[0;92m\]:\[\e[0;33m\]$HOST$(__git_ps1 "\[\e[0;92m\]:\[\e[0;31m\]%s")\[\e[0;92m\]:\[\e[0;93m\]\w\[\e[m\]\n$ '
 
 # PATH
-export PATH=/users/j3parker/bin:/users/j3parker/opt/bin:/users/j3parker/opt/usr/local/bin:$PATH:/users/j3parker/opt/node/bin
+export PATH=$HOME/bin:$HOME/opt/bin:$HOME/opt/usr/local/bin:$PATH:$HOME/opt/node/bin
 
 # Other environment variables
 export EDITOR=vim

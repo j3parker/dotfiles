@@ -2,11 +2,11 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
+Bundle 'SirVer/ultisnips'
 
 " To investigate:
 " tpope/vim-scriptease
@@ -56,7 +56,7 @@ set ignorecase
 set smartcase
 
 " Remove any trailing whitespace that is in the file
-autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+" autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
 " Status bar etc.
 set showcmd
@@ -69,14 +69,12 @@ if version >= 700
   set nospell
 endif
 
-" Swap ; and :
 nnoremap ; :
 nnoremap : ;
 
 " Highlight current line
 set cul
 
-" Typo mitigation
 command! WQ wq
 command! Wq wq
 command! W w
