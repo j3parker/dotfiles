@@ -7,6 +7,7 @@ Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'SirVer/ultisnips'
+Bundle 'godlygeek/tabular'
 
 " To investigate:
 " tpope/vim-scriptease
@@ -97,20 +98,27 @@ augroup resCur
   autocmd BufWinEnter * call ResCur()
 augroup END
 
-" sudo write
 noremap <Leader>w :w !sudo tee % > /dev/null
 noremap <Leader>s :source ~/.vimrc<Enter>
 noremap <Leader>gc :Gcommit<Enter>
 noremap <Leader>gd :Gdiff<Enter><C-w>h
-noremap <Leader>gg :diffget<Enter>:diffupdate<Enter>
-noremap <Leader>gp :diffput<Enter>:diffupdate<Enter>
 noremap <Leader>gl :Git log<Enter>
-noremap <Leader>gr :Gread<Enter>
+noremap <Leader>gco :Gread<Enter>
 noremap <Leader>gs :Gstatus<Enter>
 noremap <Leader>gw :Gwrite<Enter>
+noremap <Leader>grm :Gremove<Enter>
+noremap <Leader>gmv :Gmove 
 noremap <Leader>h <C-w>h
 noremap <Leader>j <C-w>j
 noremap <Leader>k <C-w>k
 noremap <Leader>l <C-w>l
 noremap <Leader>q @q
 noremap <leader>ev :vsplit $MYVIMRC<cr>
+
+noremap <Leader>dg :diffget<Enter>:diffupdate<Enter>
+noremap <Leader>dp :diffput<Enter>:diffupdate<Enter>
+vnoremap <Leader>dp :diffput<Enter>:diffupdate<Enter>
+noremap <Leader>du :diffupdate
+
+noremap <leader>a= :Tabularize /=<CR>
+noremap <Leader>a: :Tabularize /:\zs<CR>
