@@ -2,11 +2,12 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
+Bundle 'SirVer/ultisnips'
+Bundle 'godlygeek/tabular'
 
 " To investigate:
 " tpope/vim-scriptease
@@ -56,7 +57,7 @@ set ignorecase
 set smartcase
 
 " Remove any trailing whitespace that is in the file
-autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+" autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
 " Status bar etc.
 set showcmd
@@ -69,14 +70,12 @@ if version >= 700
   set nospell
 endif
 
-" Swap ; and :
 nnoremap ; :
 nnoremap : ;
 
 " Highlight current line
 set cul
 
-" Typo mitigation
 command! WQ wq
 command! Wq wq
 command! W w
@@ -102,20 +101,26 @@ augroup END
 noremap <Leader>w :w !sudo tee % > /dev/null
 noremap <Leader>gc :Gcommit<Enter>
 noremap <Leader>gd :Gdiff<Enter><C-w>h
-noremap <Leader>gg :diffget<Enter>:diffupdate<Enter>
-noremap <Leader>gp :diffput<Enter>:diffupdate<Enter>
 noremap <Leader>gl :Git log<Enter>
-noremap <Leader>gr :Gread<Enter>
+noremap <Leader>gco :Gread<Enter>
 noremap <Leader>gs :Gstatus<Enter>
 noremap <Leader>gw :Gwrite<Enter>
+noremap <Leader>grm :Gremove<Enter>
+noremap <Leader>gmv :Gmove 
 noremap <Leader>h <C-w>h
 noremap <Leader>j <C-w>j
 noremap <Leader>k <C-w>k
 noremap <Leader>l <C-w>l
 noremap <Leader>q @q
 noremap <leader>ev :vsplit $MYVIMRC<cr>
-noremap <Leader>sv :source $MYVIMRC<cr>
 
 " No comment continuing
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+noremap <Leader>dg :diffget<Enter>:diffupdate<Enter>
+noremap <Leader>dp :diffput<Enter>:diffupdate<Enter>
+vnoremap <Leader>dp :diffput<Enter>:diffupdate<Enter>
+noremap <Leader>du :diffupdate
+
+noremap <leader>a= :Tabularize /=<CR>
+noremap <Leader>a: :Tabularize /:\zs<CR>

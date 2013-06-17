@@ -37,6 +37,7 @@ wmiir write /colrules <<!
 # Tagging Rules
 wmiir write /tagrules <<!
 /MPlayer|VLC/ -> ~
+/Foo/ -> ~
 !
 
 # Status Bar Info
