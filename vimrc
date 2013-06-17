@@ -99,9 +99,7 @@ augroup resCur
   autocmd BufWinEnter * call ResCur()
 augroup END
 
-" sudo write
 noremap <Leader>w :w !sudo tee % > /dev/null
-noremap <Leader>s :source ~/.vimrc<Enter>
 noremap <Leader>gc :Gcommit<Enter>
 noremap <Leader>gd :Gdiff<Enter><C-w>h
 noremap <Leader>gg :diffget<Enter>:diffupdate<Enter>
@@ -116,3 +114,8 @@ noremap <Leader>k <C-w>k
 noremap <Leader>l <C-w>l
 noremap <Leader>q @q
 noremap <leader>ev :vsplit $MYVIMRC<cr>
+noremap <Leader>sv :source $MYVIMRC<cr>
+
+" No comment continuing
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
