@@ -99,7 +99,6 @@ augroup resCur
 augroup END
 
 noremap <Leader>w :w !sudo tee % > /dev/null
-noremap <Leader>s :source ~/.vimrc<Enter>
 noremap <Leader>gc :Gcommit<Enter>
 noremap <Leader>gd :Gdiff<Enter><C-w>h
 noremap <Leader>gl :Git log<Enter>
@@ -114,6 +113,9 @@ noremap <Leader>k <C-w>k
 noremap <Leader>l <C-w>l
 noremap <Leader>q @q
 noremap <leader>ev :vsplit $MYVIMRC<cr>
+
+" No comment continuing
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 noremap <Leader>dg :diffget<Enter>:diffupdate<Enter>
 noremap <Leader>dp :diffput<Enter>:diffupdate<Enter>

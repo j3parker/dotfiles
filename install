@@ -1,8 +1,5 @@
 #!/bin/bash
 git pull
-rm -rf vim/bundle/vundle
-git clone https://github.com/gmarik/vundle vim/bundle/vundle
-vim +BundleInstall +qall
 cd ../
 FILES=`ls dotfiles/ | grep -v install`
 for f in $FILES
@@ -12,3 +9,6 @@ do
   ln -s ./dotfiles/$f ./.$f
 done
 source ~/.bashrc
+rm -rf dotfiles/vim/bundle/vundle
+git clone https://github.com/gmarik/vundle dotfiles/vim/bundle/vundle
+vim +BundleInstall +qall
