@@ -1,4 +1,5 @@
 #!/bin/bash
+git pull
 rm -rf vim/bundle/vundle
 git clone https://github.com/gmarik/vundle vim/bundle/vundle
 vim +BundleInstall +qall
