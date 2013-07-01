@@ -8,6 +8,8 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'SirVer/ultisnips'
 Bundle 'godlygeek/tabular'
+Bundle 'Shougo/vimproc.vim'
+Bundle 'Shougo/unite.vim'
 
 " To investigate:
 " tpope/vim-scriptease
@@ -31,6 +33,7 @@ set scrolloff=5
 set nostartofline
 set shell=bash
 set nofoldenable
+set hidden
 let mapleader="\<space>"
 
 " Theming
@@ -98,6 +101,11 @@ augroup resCur
   autocmd BufWinEnter * call ResCur()
 augroup END
 
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
 noremap <Leader>w :w !sudo tee % > /dev/null
 noremap <Leader>s :source ~/.vimrc<Enter>
 noremap <Leader>gc :Gcommit<Enter>
@@ -108,10 +116,6 @@ noremap <Leader>gs :Gstatus<Enter>
 noremap <Leader>gw :Gwrite<Enter>
 noremap <Leader>grm :Gremove<Enter>
 noremap <Leader>gmv :Gmove 
-noremap <Leader>h <C-w>h
-noremap <Leader>j <C-w>j
-noremap <Leader>k <C-w>k
-noremap <Leader>l <C-w>l
 noremap <Leader>q @q
 noremap <leader>ev :vsplit $MYVIMRC<cr>
 
@@ -122,3 +126,4 @@ noremap <Leader>du :diffupdate
 
 noremap <leader>a= :Tabularize /=<CR>
 noremap <Leader>a: :Tabularize /:\zs<CR>
+noremap <Leader>a{ :Tabularize /{<CR>

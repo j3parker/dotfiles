@@ -10,4 +10,8 @@ do
   rm -rf ./.$f
   ln -s ./dotfiles/$f ./.$f
 done
-source ~/.bashrc
+source $HOME/.bashrc
+
+# vimproc stuff
+cd $HOME/.vim/bundle/vimproc.vim
+make -f make_unix.mak
