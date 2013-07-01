@@ -17,15 +17,6 @@ alias sl=ls
 alias w3m='w3m -no-cookie'
 alias t='make test'
 alias m='make'
-alias p='!-2'
-alias p='!-2'
-alias p='!-2'
-alias p='!-2'
-alias p='!-2'
-alias p='!-2'
-alias p='!-2'
-alias p='!-2'
-alias p='!-2'
 
 source ~/.git-completion.sh
 source ~/.git-prompt.sh
