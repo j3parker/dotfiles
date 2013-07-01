@@ -22,8 +22,8 @@ filetype plugin indent on
 
 " General
 set undodir=/tmp
-set cm=blowfish
-set t_Co=256
+set cryptmethod=blowfish
+set t_Co=256 " number of colors
 set nowrap
 set history=200
 set undolevels=2000
@@ -36,6 +36,7 @@ set nostartofline
 set shell=bash
 set nofoldenable
 set hidden
+set cursorline
 
 let mapleader="\<space>"
 
@@ -55,7 +56,6 @@ au FileType php setl expandtab tabstop=4 sw=4
 au FileType html setl expandtab tabstop=4 sw=4
 au FileType javascript setl expandtab tabstop=4 sw=4
 
-
 " Searching
 set nohlsearch
 set showmatch
@@ -63,7 +63,7 @@ set ignorecase
 set smartcase
 
 " Remove any trailing whitespace that is in the file
-" autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
 " Status bar etc.
 set showcmd
@@ -71,24 +71,22 @@ set ruler
 highlight MatchParen ctermbg=4
 
 " Spell checking
-if version >= 700
-  set spl=en spell
-  set nospell
-endif
+set spl=en spell
+set nospell
 
 nnoremap ; :
 nnoremap : ;
-
-" Highlight current line
-set cul
 
 command! WQ wq
 command! Wq wq
 command! W w
 command! Q q
 
-" Indent paragraph
+set formatprg=par\ -w80
 nnoremap Q gq}
+
+" No comment continuing
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Restore cursor to previous position when a file is loaded
 set viminfo='25,\"100,:20,%,n~/.viminfo
@@ -117,12 +115,9 @@ noremap <Leader>gco :Gread<Enter>
 noremap <Leader>gs :Gstatus<Enter>
 noremap <Leader>gw :Gwrite<Enter>
 noremap <Leader>grm :Gremove<Enter>
-noremap <Leader>gmv :Gmove 
+noremap <Leader>gmv :Gmove
 noremap <Leader>q @q
 noremap <leader>ev :vsplit $MYVIMRC<cr>
-
-" No comment continuing
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 noremap <Leader>dg :diffget<Enter>:diffupdate<Enter>
 noremap <Leader>dp :diffput<Enter>:diffupdate<Enter>
