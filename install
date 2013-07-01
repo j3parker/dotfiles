@@ -8,7 +8,11 @@ do
   rm -rf ./.$f
   ln -s ./dotfiles/$f ./.$f
 done
-source ~/.bashrc
+source $HOME/.bashrc
 rm -rf dotfiles/vim/bundle/vundle
 git clone https://github.com/gmarik/vundle dotfiles/vim/bundle/vundle
 vim +BundleInstall +qall
+
+mkdir -p $HOME/.vim/ftdetect/
+ln -Fs $HOME/.vim/bundle/ultisnips/ftdetect/* $HOME/.vim/ftdetect/
+rm -rf $HOME/.vim/bundle/ultisnips/UltiSnips

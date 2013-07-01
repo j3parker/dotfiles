@@ -13,7 +13,9 @@ Bundle 'godlygeek/tabular'
 " tpope/vim-scriptease
 " tpope/vim-commentary
 
-let snippets_dir = '~/.vim/snippets'
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
 filetype plugin indent on
 
 " General
@@ -31,6 +33,8 @@ set scrolloff=5
 set nostartofline
 set shell=bash
 set nofoldenable
+set hidden
+
 let mapleader="\<space>"
 
 " Theming
