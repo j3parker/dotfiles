@@ -1,7 +1,6 @@
 #!/bin/bash
-rm -rf vim/bundle/vundle
-git clone https://github.com/gmarik/vundle vim/bundle/vundle
-vim +BundleInstall +qall
+git pull
+
 cd ../
 FILES=`ls dotfiles/ | grep -v install`
 for f in $FILES
@@ -15,3 +14,13 @@ source $HOME/.bashrc
 # vimproc stuff
 cd $HOME/.vim/bundle/vimproc.vim
 make -f make_unix.mak
+
+# vundle + vim install
+rm -rf dotfiles/vim/bundle/vundle
+git clone https://github.com/gmarik/vundle dotfiles/vim/bundle/vundle
+vim +BundleInstall +qall
+
+# ultisnips extra install steps
+mkdir -p $HOME/.vim/ftdetect/
+ln -Fs $HOME/.vim/bundle/ultisnips/ftdetect/* $HOME/.vim/ftdetect/
+rm -rf $HOME/.vim/bundle/ultisnips/UltiSnips

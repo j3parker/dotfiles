@@ -15,6 +15,8 @@ shopt -s checkwinsize
 alias secs='date +%s'
 alias sl=ls
 alias w3m='w3m -no-cookie'
+alias t='make test'
+alias m='make'
 
 source ~/.git-completion.sh
 source ~/.git-prompt.sh

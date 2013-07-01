@@ -15,7 +15,9 @@ Bundle 'Shougo/unite.vim'
 " tpope/vim-scriptease
 " tpope/vim-commentary
 
-let snippets_dir = '~/.vim/snippets'
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
 filetype plugin indent on
 
 " General
@@ -34,6 +36,7 @@ set nostartofline
 set shell=bash
 set nofoldenable
 set hidden
+
 let mapleader="\<space>"
 
 " Theming
@@ -107,7 +110,6 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 noremap <Leader>w :w !sudo tee % > /dev/null
-noremap <Leader>s :source ~/.vimrc<Enter>
 noremap <Leader>gc :Gcommit<Enter>
 noremap <Leader>gd :Gdiff<Enter><C-w>h
 noremap <Leader>gl :Git log<Enter>
@@ -118,6 +120,9 @@ noremap <Leader>grm :Gremove<Enter>
 noremap <Leader>gmv :Gmove 
 noremap <Leader>q @q
 noremap <leader>ev :vsplit $MYVIMRC<cr>
+
+" No comment continuing
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 noremap <Leader>dg :diffget<Enter>:diffupdate<Enter>
 noremap <Leader>dp :diffput<Enter>:diffupdate<Enter>
