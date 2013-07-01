@@ -22,5 +22,5 @@ vim +BundleInstall +qall
 
 # ultisnips extra install steps
 mkdir -p $HOME/.vim/ftdetect/
-ln -Fs $HOME/.vim/bundle/ultisnips/ftdetect/* $HOME/.vim/ftdetect/
+ln -fs $HOME/.vim/bundle/ultisnips/ftdetect/* $HOME/.vim/ftdetect/
 rm -rf $HOME/.vim/bundle/ultisnips/UltiSnips
