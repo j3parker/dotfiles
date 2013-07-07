@@ -36,6 +36,7 @@ set nostartofline
 set shell=bash
 set nofoldenable
 set hidden
+set shortmess+=I
 
 let mapleader="\<space>"
 
