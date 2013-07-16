@@ -103,6 +103,8 @@ augroup resCur
   autocmd BufWinEnter * call ResCur()
 augroup END
 
+map Y y$
+
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
