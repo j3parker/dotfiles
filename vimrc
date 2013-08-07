@@ -8,8 +8,6 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'SirVer/ultisnips'
 Bundle 'godlygeek/tabular'
-Bundle 'Shougo/vimproc.vim'
-Bundle 'Shougo/unite.vim'
 
 " To investigate:
 " tpope/vim-scriptease

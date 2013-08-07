@@ -46,5 +46,3 @@ export PATH=$HOME/bin:$HOME/opt/bin:$HOME/opt/usr/local/bin:$PATH:$HOME/opt/node
 # Other environment variables
 export EDITOR=vim
 export VISUAL=vim
-
-set -o vi
