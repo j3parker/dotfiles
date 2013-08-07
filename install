@@ -17,8 +17,8 @@ git clone https://github.com/gmarik/vundle dotfiles/vim/bundle/vundle
 vim +BundleInstall +qall
 
 # vimproc stuff
-cd $HOME/.vim/bundle/vimproc.vim
-make -f make_unix.mak
+# cd $HOME/.vim/bundle/vimproc.vim
+# make -f make_unix.mak
 
 # ultisnips extra install steps
 mkdir -p $HOME/.vim/ftdetect/
