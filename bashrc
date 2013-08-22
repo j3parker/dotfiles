@@ -48,3 +48,5 @@ export EDITOR=vim
 export VISUAL=vim
 
 LANG=en_US.UTF-8
+
+alias gd='git diff'

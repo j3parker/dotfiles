@@ -109,6 +109,8 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+let g:gundo_return_on_revert = 0
+
 noremap <Leader>w :w !sudo tee % > /dev/null
 noremap <Leader>gc :Gcommit<Enter>
 noremap <Leader>gd :Gdiff<Enter><C-w>h
@@ -129,3 +131,5 @@ noremap <Leader>du :diffupdate
 noremap <leader>a= :Tabularize /=<CR>
 noremap <Leader>a: :Tabularize /:\zs<CR>
 noremap <Leader>a{ :Tabularize /{<CR>
+
+noremap <Leader>u :GundoToggle<CR>
