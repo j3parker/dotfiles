@@ -46,3 +46,5 @@ export PATH=$HOME/bin:$HOME/opt/bin:$HOME/opt/usr/local/bin:$PATH:$HOME/opt/node
 # Other environment variables
 export EDITOR=vim
 export VISUAL=vim
+
+LANG=en_US.UTF-8
