@@ -1,0 +1,119 @@
+# Preprocessor
+snippet once "Inclusion guard" b
+#ifndef _`!v toupper(expand('%:t:r'))`_H_
+#define _`!v toupper(expand('%:t:r'))`_H_
+
+$0
+
+#endif
+endsnippet
+
+snippet ns "namespace" b
+namespace $1 {
+$0
+}
+endsnippet
+
+snippet inc "include" w
+#include $0
+endsnippet
+
+snippet us "using" w
+using $1 = $2;
+endsnippet
+
+snippet cl
+class $1 {
+public:
+private:
+	$0
+};
+endsnippet
+
+snippet st
+struct $1${2: \{${3:...}$0\}};
+endsnippet
+
+snippet te
+template <class ${1:T}>
+endsnippet
+
+snippet cr "const ref" w
+const ${1:auto}&
+endsnippet
+
+# std support
+snippet vec "std::vector" w
+std::vector<${1:T}>
+endsnippet
+
+snippet str "std::string" w
+std::string
+endsnippet
+
+snippet up "std::unique_ptr" w
+std::unique_ptr<${1:T}>
+endsnippet
+
+snippet opt "std::optional" w
+std::optional<${1:T}>
+endsnippet
+
+snippet cout "std::cout" b
+std::cout << $1;
+endsnippet
+
+snippet cin "std::cin" b
+std::cin >> $1;
+endsnippet
+
+snippet enif "enable_if" w
+std::enable_if_t<$1>
+endsnippet
+
+snippet same "same" w
+std::is_same<$1, $2>::value
+endsnippet
+
+# Statements
+snippet if "if" b
+if ($1) {
+	$2
+}
+endsnippet
+
+snippet else
+else {
+	$1
+}
+endsnippet
+
+snippet elif
+else if ($1) {
+	$2
+}
+endsnippet
+
+snippet wh "while" b
+while ($1) {
+	$2
+}
+endsnippet
+
+snippet do "do-while" b
+do {
+	$2
+} while($1);
+endsnippet
+
+snippet fe "for each" b
+for (${1:const }auto${2:&} ${3:e} : ${4:v}) {
+	$5
+}
+endsnippet
+
+snippet main "int main" b
+int main(${1:int argc, const char** argv}) {
+	$0
+}
+endsnippet

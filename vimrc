@@ -9,6 +9,11 @@ Bundle 'tpope/vim-markdown'
 Bundle 'SirVer/ultisnips'
 Bundle 'godlygeek/tabular'
 Bundle 'sjl/gundo.vim.git'
+Bundle 'tommcdo/vim-exchange'
+Bundle 'wlangstroth/vim-racket'
+Bundle 'j3parker/vim-niji'
+Bundle 'tpope/vim-repeat'
+Bundle 'Lokaltog/vim-easymotion'
 
 " To investigate:
 " tpope/vim-scriptease
@@ -37,8 +42,6 @@ set nofoldenable
 set hidden
 set shortmess+=I
 set cursorline
-
-let mapleader="\<space>"
 
 " Theming
 syntax enable
@@ -111,6 +114,21 @@ map <C-l> <C-w>l
 
 let g:gundo_return_on_revert = 0
 
+" quotes
+function! SetupQuotes()
+  iabbrev <C-b>a “
+  iabbrev <C-b>b ”
+  iabbrev <C-b>c ‘
+  iabbrev <C-b>d ’
+endfunction
+
+augroup quotes
+  autocmd!
+  autocmd FileType markdown call SetupQuotes()
+augroup END
+
+let mapleader="\<space>"
+
 noremap <Leader>w :w !sudo tee % > /dev/null
 noremap <Leader>gc :Gcommit<Enter>
 noremap <Leader>gd :Gdiff<Enter><C-w>h
@@ -133,3 +151,22 @@ noremap <Leader>a: :Tabularize /:\zs<CR>
 noremap <Leader>a{ :Tabularize /{<CR>
 
 noremap <Leader>u :GundoToggle<CR>
+
+noremap <Leader>m :w<Bar>!make<CR>
+
+" EasyMotion
+let g:EasyMotion_do_mapping = 0
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_use_smartsign_us = 1
+let g:EasyMotion_startofline = 0
+nmap s <Plug>(easymotion-s2)
+
+map <Leader>h <Plug>(easymotion-linebackward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>l <Plug>(easymotion-lineforward)
+
+map  <leader>/ <Plug>(easymotion-sn)
+omap <leader>/ <Plug>(easymotion-tn)
+map  <leader>n <Plug>(easymotion-next)
+map  <leader>N <Plug>(easymotion-prev)
