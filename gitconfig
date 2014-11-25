@@ -1,6 +1,6 @@
 [user]
-  name = Jacob Parker
-  email = j@cob.xxx
+	name = Jacob Parker
+	email = j3parker@csclub.uwaterloo.ca
 [core]
   editor = /usr/bin/vim
 [alias]
@@ -10,3 +10,5 @@
 	ci = commit
 	unstage = reset HEAD --
 	last = log -p -1 HEAD
+[push]
+	default = simple
