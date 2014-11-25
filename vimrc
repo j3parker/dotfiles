@@ -14,6 +14,10 @@ Bundle 'wlangstroth/vim-racket'
 Bundle 'j3parker/vim-niji'
 Bundle 'tpope/vim-repeat'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'groenewege/vim-less'
+Bundle 'j3parker/vim-pollen'
+Bundle 'twerth/ir_black'
+Bundle 'editorconfig/editorconfig-vim'
 
 " To investigate:
 " tpope/vim-scriptease
@@ -45,8 +49,7 @@ set cursorline
 
 " Theming
 syntax enable
-set background=dark
-colorscheme solarized
+colorscheme ir_black
 
 " Indentation
 set expandtab
@@ -58,6 +61,7 @@ au FileType tpl setl expandtab tabstop=4 sw=4
 au FileType php setl expandtab tabstop=4 sw=4
 au FileType html setl expandtab tabstop=4 sw=4
 au FileType javascript setl expandtab tabstop=4 sw=4
+set breakindent
 
 " Searching
 set nohlsearch
