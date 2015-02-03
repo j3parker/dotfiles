@@ -50,3 +50,12 @@ export VISUAL=vim
 LANG=en_US.UTF-8
 
 alias gd='git diff'
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/gems/ruby-2.0.0-p247/bin
+
+alias sudo='sudo '
+alias shutdown='echo wrong machine'
+
+alias local_cmake='cmake -DCMAKE_INSTALL_PREFIX:PATH=$HOME/opt'
+PATH="$PATH:/home/j3parker/src/flow/"
