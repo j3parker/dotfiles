@@ -11,13 +11,12 @@ Bundle 'godlygeek/tabular'
 Bundle 'sjl/gundo.vim.git'
 Bundle 'tommcdo/vim-exchange'
 Bundle 'wlangstroth/vim-racket'
-Bundle 'j3parker/vim-niji'
 Bundle 'tpope/vim-repeat'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'groenewege/vim-less'
-Bundle 'j3parker/vim-pollen'
 Bundle 'twerth/ir_black'
 Bundle 'editorconfig/editorconfig-vim'
+Bundle 'mxw/vim-jsx'
 
 " To investigate:
 " tpope/vim-scriptease
