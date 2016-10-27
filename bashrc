@@ -17,6 +17,7 @@ alias sl=ls
 alias w3m='w3m -no-cookie'
 alias t='make test'
 alias m='make'
+alias b='bazel build //...'
 
 source ~/.git-completion.sh
 source ~/.git-prompt.sh
