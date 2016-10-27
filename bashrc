@@ -37,6 +37,12 @@ esac
 # HOST=`uname -n`
 # export HOST=$(grep -e "^`grep -e "^[^\ ]*\ $HOST" /etc/hosts | head -n 1 | sed -e "s/\ .*//"`" /etc/hosts | sed -e "s/.*\ //" | while read line ; do if [[ ${line:0:1} == ${HOST:0:1} ]]; then echo $line; fi; done | awk '{ print length, $0 }' | sort -n | awk '{$1=""; print $0}' | head -n 1 | sed -e 's/^\ //')
 
+if [ $HOST == "solidangle" ]; then
+  alias home="ssh jacob@localhost -p 13371"
+else
+  alias home="ssh j3parker@solidangle.ca 'ssh jacob@localhost -p 13371'"
+fi
+
 export PS1='\[\e[0;36m\]\u\[\e[0;92m\]:\[\e[0;33m\]$HOST$(__git_ps1 "\[\e[0;92m\]:\[\e[0;31m\]%s")\[\e[0;92m\]:\[\e[0;93m\]\w\[\e[m\]\n$ '
 
 export EDITOR=vim
