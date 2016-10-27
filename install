@@ -5,21 +5,23 @@ raco pkg install --deps search-auto pollen
 raco pkg install --deps search-auto git://github.com/j3parker/desolarized
 raco pollen render *.pp
 
+DIR=`pwd | sed -e 's:^.*/::'`
+
 cd ../
-FILES=`ls dotfiles/ | grep -v install`
+FILES=`ls $DIR/ | grep -v install`
 for f in $FILES
 do
   if [ ${f: -2} != ".p" ]; then
     echo .$f
     rm -rf ./.$f
-    ln -s ./dotfiles/$f ./.$f
+    ln -s ./$DIR/$f ./.$f
   fi
 done
 source $HOME/.bashrc
 
 # vundle + vim install
-rm -rf dotfiles/vim/bundle/vundle
-git clone https://github.com/gmarik/vundle dotfiles/vim/bundle/vundle
+rm -rf $DIR/vim/bundle/vundle
+git clone https://github.com/gmarik/vundle $DIR/vim/bundle/vundle
 vim +BundleInstall +qall
 
 # vimproc stuff
