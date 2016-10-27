@@ -1,9 +1,10 @@
 #!/bin/bash
 git pull
 
-raco pkg install --deps search-auto pollen
-raco pkg install --deps search-auto git://github.com/j3parker/desolarized
-raco pollen render *.pp
+# re-evaluate this
+# raco pkg install --deps search-auto pollen
+# raco pkg install --deps search-auto git://github.com/j3parker/desolarized
+# raco pollen render *.pp
 
 DIR=`pwd | sed -e 's:^.*/::'`
 
@@ -24,6 +25,7 @@ rm -rf $DIR/vim/bundle/vundle
 git clone https://github.com/gmarik/vundle $DIR/vim/bundle/vundle
 vim +BundleInstall +qall
 
+# re-evaluate this
 # vimproc stuff
 # cd $HOME/.vim/bundle/vimproc.vim
 # make -f make_unix.mak
