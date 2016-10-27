@@ -21,8 +21,6 @@ alias m='make'
 source ~/.git-completion.sh
 source ~/.git-prompt.sh
 
-# Prompt
-
 HOST=`uname -n`
 case $HOST in
 "iMac.local") HOST=iMac;;
@@ -40,10 +38,6 @@ esac
 
 export PS1='\[\e[0;36m\]\u\[\e[0;92m\]:\[\e[0;33m\]$HOST$(__git_ps1 "\[\e[0;92m\]:\[\e[0;31m\]%s")\[\e[0;92m\]:\[\e[0;93m\]\w\[\e[m\]\n$ '
 
-# PATH
-export PATH=$HOME/bin:$HOME/opt/bin:$HOME/opt/usr/local/bin:$PATH:$HOME/opt/node/bin
-
-# Other environment variables
 export EDITOR=vim
 export VISUAL=vim
 
@@ -51,11 +45,9 @@ LANG=en_US.UTF-8
 
 alias gd='git diff'
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.rvm/gems/ruby-2.0.0-p247/bin
-
+### ????
 alias sudo='sudo '
+
 alias shutdown='echo wrong machine'
 
-alias local_cmake='cmake -DCMAKE_INSTALL_PREFIX:PATH=$HOME/opt'
-PATH="$PATH:/home/j3parker/src/flow/"
+export PATH=$HOME/opt/bin:$HOME/opt/usr/local/bin
