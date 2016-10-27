@@ -17,6 +17,7 @@ Bundle 'groenewege/vim-less'
 Bundle 'twerth/ir_black'
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'mxw/vim-jsx'
+Bundle 'rhysd/vim-clang-format'
 
 " To investigate:
 " tpope/vim-scriptease
@@ -156,6 +157,8 @@ noremap <Leader>a{ :Tabularize /{<CR>
 noremap <Leader>u :GundoToggle<CR>
 
 noremap <Leader>m :w<Bar>!make<CR>
+
+noremap <Leader>f :ClangFormat<CR>
 
 " EasyMotion
 let g:EasyMotion_do_mapping = 0
