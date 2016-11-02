@@ -1,28 +1,47 @@
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" Core
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-sensible'
+Bundle 'tpope/vim-repeat'
+Bundle 'sjl/gundo.vim.git'
+Bundle 'SirVer/ultisnips'
+Bundle 'Lokaltog/vim-easymotion'
+
+" theme
+Bundle 'twerth/ir_black'
+
+" git
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-fugitive'
+
+" languages
 Bundle 'tpope/vim-markdown'
-Bundle 'SirVer/ultisnips'
-Bundle 'godlygeek/tabular'
-Bundle 'sjl/gundo.vim.git'
-Bundle 'tommcdo/vim-exchange'
 Bundle 'wlangstroth/vim-racket'
-Bundle 'tpope/vim-repeat'
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'groenewege/vim-less'
-Bundle 'twerth/ir_black'
-Bundle 'editorconfig/editorconfig-vim'
 Bundle 'mxw/vim-jsx'
+
+" lint tools
 Bundle 'rhysd/vim-clang-format'
+Bundle 'editorconfig/editorconfig-vim'
+
+" Org-mode related things
 Bundle 'jceb/vim-orgmode'
+Bundle 'vim-scripts/utl.vim'
+Bundle 'tpope/vim-speeddating'
+Bundle 'mattn/calendar-vim'
+
+"" haven't used in awhile:
+" cxiw {move somewhere else} cxiw -> exchange words
+Bundle 'tommcdo/vim-exchange'
+" a=, a:, a{ ... still needed?
+Bundle 'godlygeek/tabular'
+
 
 " To investigate:
-" tpope/vim-scriptease
-" tpope/vim-commentary
+" tpope/vim-scriptease  <-- plugin to help writing plugins
+" tpope/vim-commentary  <-- comment/uncomment chunks of text
 
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
