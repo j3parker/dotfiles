@@ -46,14 +46,11 @@ Bundle 'godlygeek/tabular'
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-filetype plugin indent on
-
 " General
 set undodir=/tmp
 set cryptmethod=blowfish
 set t_Co=256 " number of colors
 set nowrap
-set history=200
 set undolevels=2000
 set ttyfast
 set noerrorbells
@@ -61,7 +58,6 @@ set visualbell t_vb=
 set lazyredraw
 set scrolloff=5
 set nostartofline
-set shell=bash
 set nofoldenable
 set hidden
 set shortmess+=I
@@ -94,7 +90,6 @@ autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
 " Status bar etc.
 set showcmd
-set ruler
 highlight MatchParen ctermbg=4
 
 " Spell checking
