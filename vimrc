@@ -18,6 +18,7 @@ Bundle 'twerth/ir_black'
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'mxw/vim-jsx'
 Bundle 'rhysd/vim-clang-format'
+Bundle 'jceb/vim-orgmode'
 
 " To investigate:
 " tpope/vim-scriptease
