@@ -14,12 +14,6 @@ Bundle 'wlangstroth/vim-racket'
 Bundle 'groenewege/vim-less'
 Bundle 'mxw/vim-jsx'
 
-" Org-mode related things
-Bundle 'jceb/vim-orgmode'
-Bundle 'vim-scripts/utl.vim'
-Bundle 'tpope/vim-speeddating'
-Bundle 'mattn/calendar-vim'
-
 "" haven't used in awhile:
 " cxiw {move somewhere else} cxiw -> exchange words
 Bundle 'tommcdo/vim-exchange'
