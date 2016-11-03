@@ -10,15 +10,15 @@ echo "Installing fonts..."
 echo "  Source Code Pro"
 curl -sL https://github.com/adobe-fonts/source-code-pro/archive/2.030R-ro/1.050R-it.zip -o scp.zip
 unzip -qj scp.zip -d scp
-cp scp/*.otf .
+cp scp/*.otf scp/*.ttf .
 
 echo "  Source Sans Pro"
 curl -sL https://github.com/adobe-fonts/source-sans-pro/archive/2.020R-ro/1.075R-it.zip -o ssp.zip
 unzip -qj ssp.zip -d ssp
-cp ssp/*.otf .
+cp ssp/*.otf ssp/*.ttf .
 
 rm -rf *.zip scp ssp
 
 echo "Updating font cache"
-fc-cache -f
+fc-cache .
 echo ""
