@@ -61,6 +61,8 @@ Bundle 'godlygeek/tabular'
 noremap <leader>a= :Tabularize /=<CR>
 noremap <Leader>a: :Tabularize /:\zs<CR>
 noremap <Leader>a{ :Tabularize /{<CR>
+noremap <Leader>a# :Tabularize /#<CR>
+noremap <Leader>a\ :Tabularize /\\<CR>
 
 " Gundo
 Bundle 'sjl/gundo.vim.git'
