@@ -2,3 +2,9 @@ Host github.com
   HostName github.com
   User j3parker
   IdentityFile ~/src/ssh_public_keys/com/github/j3parker.key
+
+Host dom0
+  HostName dom0.solidangle.ca
+  PreferredAuthentications publickey
+  IdentityFile ~/src/ssh_public_keys/ca/solidangle/dom0/root.key
+  IdentitiesOnly yes
