@@ -1,0 +1,4 @@
+Host github.com
+  HostName github.com
+  User j3parker
+  IdentityFile ~/src/ssh_public_keys/com/github/j3parker.key
