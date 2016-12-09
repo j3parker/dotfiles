@@ -1,0 +1,20 @@
+#!/bin/bash
+HOMEDIR_FILE=$1
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"/..
+
+# Non-links are not dead
+if [[ ! -L "$HOMEDIR_FILE" ]]; then
+  exit 1
+fi
+
+# Links that point to existing files are not dead
+if [ -e "$HOMEDIR_FILE" ]; then
+  exit 1
+fi
+
+LINKS_TO=`readlink "$HOMEDIR_FILE"`
+
+# Only links to things in $DIR are possibly dead
+[[ $LINKS_TO == "$DIR"/* ]]
+exit $?
