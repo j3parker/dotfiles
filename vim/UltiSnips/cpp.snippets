@@ -117,3 +117,13 @@ int main(${1:int argc, const char** argv}) {
 	$0
 }
 endsnippet
+
+snippet test "google test" b
+TEST($1, $2) {
+	$3
+}
+endsnippet
+
+snippet xpe "expect equal" b
+EXPECT_EQ($1, $2);
+endsnippet
