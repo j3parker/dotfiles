@@ -13,6 +13,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'wlangstroth/vim-racket'
 Bundle 'groenewege/vim-less'
 Bundle 'mxw/vim-jsx'
+Bundle 'google/vim-ft-bzl'
 
 "" haven't used in awhile:
 " cxiw {move somewhere else} cxiw -> exchange words
@@ -56,7 +57,6 @@ vnoremap <Leader>dp :diffput<Enter>:diffupdate<Enter>
 noremap <Leader>du :diffupdate
 
 " Tabularize
-" a=, a:, a{ ... still needed?
 Bundle 'godlygeek/tabular'
 noremap <leader>a= :Tabularize /=<CR>
 noremap <Leader>a: :Tabularize /:\zs<CR>
