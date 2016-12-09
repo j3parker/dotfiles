@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-EXPECTED_NONTRACKED_FILES='^(|.|aspnet|bash_history|cache|cargo|compiz|config|dbus|dotnet|gconf|gnupg|ICEauthority|lesshst|lldb|local|keys|mozilla|nano|nuget|nv|nvidia-settings-rc|pki|pulse-cookie|steam|steampath|steampid|sudo_as_admin_successful|viminfo|vscode|Xauthority)$'
+EXPECTED_NONTRACKED_FILES="^(.|`cat .gitignore | grep '^[^/]*/$' | tr -d '/' | tr '\n' '|'`)$"
 NON_DOTFILES='^(util|README.md)$'
 
 comm -3 --output-delimiter="++ " \
