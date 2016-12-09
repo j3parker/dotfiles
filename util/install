@@ -5,8 +5,9 @@
 # raco pkg install --deps search-auto git://github.com/j3parker/desolarized
 # raco pollen render *.pp
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DIR="$SCRIPT_DIR"/..
 NON_DOTFILES='^(util|README.md)$'
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"/..
 
 for f in `ls $DIR/ | grep -Ev $NON_DOTFILES`
 do
@@ -32,3 +33,5 @@ vim +BundleInstall +qall
 mkdir -p $HOME/.vim/ftdetect/
 ln -fs $HOME/.vim/bundle/ultisnips/ftdetect/* $HOME/.vim/ftdetect/
 rm -rf $HOME/.vim/bundle/ultisnips/UltiSnips
+
+$SCRIPT_DIR/cleanup
