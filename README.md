@@ -1,2 +1,5 @@
-My config files. Probably not useful to others. Run install from the dotfiles
-directory.
+# dotfiles
+
+Jacob's `$HOME` config files for Linux/macOS.
+
+Create a symlink to `util/dotfiles` in `$PATH` and execute `dotfiles install` to set everything up.
