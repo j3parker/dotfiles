@@ -1,0 +1,9 @@
+#!/bin/bash
+set -euo pipefail
+
+EXPECTED_NONTRACKED_FILES='^(|.|aspnet|bash_history|cache|cargo|compiz|dbus|lesshst|lldb|mozilla|nuget|pulse-cookie|steam|steampath|steampid|viminfo)$'
+NON_DOTFILES='^(util|README.md)$'
+
+comm -3 --output-delimiter="++ " \
+  <(ls -d ~/.* | sed -e 's/.*\/\.//' | grep -Ev $EXPECTED_NONTRACKED_FILES) \
+  <(ls -d * | grep -Ev $NON_DOTFILES)
