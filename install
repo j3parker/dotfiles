@@ -1,5 +1,4 @@
 #!/bin/bash
-git pull https://github.com/j3parker/dotfiles master
 
 # re-evaluate this
 # raco pkg install --deps search-auto pollen
