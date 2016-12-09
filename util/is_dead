@@ -1,8 +1,6 @@
 #!/bin/bash
 HOMEDIR_FILE=$1
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"/..
-
 # Non-links are not dead
 if [[ ! -L "$HOMEDIR_FILE" ]]; then
   exit 1
@@ -15,6 +13,6 @@ fi
 
 LINKS_TO=`readlink "$HOMEDIR_FILE"`
 
-# Only links to things in $DIR are possibly dead
-[[ $LINKS_TO == "$DIR"/* ]]
+# Only links to things in $REPO_DIR are possibly dead
+[[ $LINKS_TO == "$REPO_DIR"/* ]]
 exit $?

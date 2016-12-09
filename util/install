@@ -5,23 +5,21 @@
 # raco pkg install --deps search-auto git://github.com/j3parker/desolarized
 # raco pollen render *.pp
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-DIR="$SCRIPT_DIR"/..
 NON_DOTFILES='^(util|README.md)$'
 
-for f in `ls $DIR/ | grep -Ev $NON_DOTFILES`
+for f in `ls $REPO_DIR/ | grep -Ev $NON_DOTFILES`
 do
   if [ ${f: -2} != ".p" ]; then
     echo .$f
     rm -rf $HOME/.$f
-    ln -s $DIR/$f $HOME/.$f
+    ln -s $REPO_DIR/$f $HOME/.$f
   fi
 done
 source $HOME/.bashrc
 
 # vundle + vim install
-rm -rf $DIR/vim/bundle/vundle
-git clone https://github.com/gmarik/vundle $DIR/vim/bundle/vundle
+rm -rf $REPO_DIR/vim/bundle/vundle
+git clone https://github.com/gmarik/vundle $REPO_DIR/vim/bundle/vundle
 vim +BundleInstall +qall
 
 # re-evaluate this
