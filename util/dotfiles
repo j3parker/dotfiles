@@ -8,4 +8,3 @@ SCRIPT_DIR="$(cd "$(dirname $(readlink "${BASH_SOURCE[0]}"))" && pwd)"
 CMD=$1
 
 $SCRIPT_DIR/$CMD
-
