@@ -1,0 +1,57 @@
+snippet cclib "cc_library" b
+cc_library(
+	name = "${1:...}",
+	srcs = ["${8:...}"],
+	hdrs = ["${9:...}"],${2:
+	deps = [
+		"${5://...:...}",
+	],}${3:
+	copts = [
+		"${6:...}",
+	],}${4:
+	linkopts = [
+		"${7:...}",
+	],}
+	visibility = ["${10://...:...}"],
+)
+endsnippet
+
+snippet ccbin "cc_binary" b
+cc_binary(
+	name = "${1:...}",
+	srcs = ["${4:...}"],${2:
+	deps = [
+		${3:"..."},
+	],}
+)
+endsnippet
+
+snippet http "new_http_archive" b
+new_http_archive(
+	name = "${1:...}",
+	url = "${2:...}",
+	sha256 = "${3:...}",
+	build_file = "${4:foo.BUILD}",${5:
+	strip_prefix = "${6:...}",}
+)
+endsnippet
+
+snippet cctest "cc_test" b
+cc_test(
+	name = "${1:...}",
+	size = "${7:small}",
+	srcs = ["${6:...}"],${2:
+	copts = ["${3:-Iexternal/gtest/include}"],
+	}${4:deps = [
+		"${5:@gtest//:main}",
+	],}
+)
+endsnippet
+
+snippet git "git_repository" b
+git_repository(
+	name = "${1:...}",
+	remote = "${2:https://github.com/${3:...}}",
+	commit = "${4:...}",
+)
+endsnippet
