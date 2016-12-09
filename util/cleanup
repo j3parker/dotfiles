@@ -5,6 +5,3 @@ $SCRIPT_DIR/find_dead | while read FILE; do
   echo "Deleting $FILE"
   rm $FILE
 done
-
-
-
