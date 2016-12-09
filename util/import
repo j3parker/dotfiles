@@ -1,0 +1,23 @@
+#!/bin/bash
+set -euo pipefail
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"/..
+
+HOMEDIR_FILE=$HOME/.$1
+IMPORTED_FILE=$DIR/$1
+
+if [ ! -e $HOMEDIR_FILE ]; then
+  echo $HOMEDIR_FILE does not exist!
+  exit 1
+fi
+
+if [ -e $IMPORTED_FILE ]; then
+  echo $IMPORTED_FILE already exists!
+  exit 1
+fi
+
+cp -r $HOMEDIR_FILE $IMPORTED_FILE
+rm -rf $HOMEDIR_FILE
+ln -s $IMPORTED_FILE $HOMEDIR_FILE
+
+echo Imported .$1
