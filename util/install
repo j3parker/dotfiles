@@ -5,16 +5,15 @@
 # raco pkg install --deps search-auto git://github.com/j3parker/desolarized
 # raco pollen render *.pp
 
-DIR=`pwd | sed -e 's:^.*/::'`
+NON_DOTFILES='^(util|README.md)$'
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"/..
 
-cd ../
-FILES=`ls $DIR/ | grep -v install`
-for f in $FILES
+for f in `ls $DIR/ | grep -Ev $NON_DOTFILES`
 do
   if [ ${f: -2} != ".p" ]; then
     echo .$f
-    rm -rf ./.$f
-    ln -s ./$DIR/$f ./.$f
+    rm -rf $HOME/.$f
+    ln -s $DIR/$f $HOME/.$f
   fi
 done
 source $HOME/.bashrc
