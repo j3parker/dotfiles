@@ -57,4 +57,4 @@ alias sudo='sudo '
 
 alias shutdown='echo wrong machine'
 
-export PATH=$PATH:$HOME/opt/bin:$HOME/opt/usr/local/bin
+export PATH=$HOME/bin:$PATH:$HOME/opt/bin:$HOME/opt/usr/local/bin
