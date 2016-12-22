@@ -59,6 +59,7 @@ mode "layout" {
   bindsym t layout tabbed
   bindsym e layout toggle split
   bindsym space floating toggle
+  bindsym Escape mode "default"
 }
 
 bindsym $mod+m mode "move window"
