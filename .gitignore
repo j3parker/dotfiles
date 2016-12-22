@@ -1,6 +1,7 @@
 aspnet/
 babel.json/
 bash_history/
+bazel/
 cache/
 cargo/
 compiz/
