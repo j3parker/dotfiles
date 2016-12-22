@@ -29,5 +29,6 @@ vim/bundle
 vim/ftdetect
 viminfo/
 vscode/
+w3m/
 wmii/history*
 Xauthority/
