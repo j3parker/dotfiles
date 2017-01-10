@@ -1,1 +1,3 @@
 bell_msg ""
+vbell off
+startup_message off
