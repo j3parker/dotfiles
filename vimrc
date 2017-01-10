@@ -138,7 +138,12 @@ au FileType tpl setl expandtab tabstop=4 sw=4
 au FileType php setl expandtab tabstop=4 sw=4
 au FileType html setl expandtab tabstop=4 sw=4
 au FileType javascript setl expandtab tabstop=4 sw=4
-set breakindent
+
+
+if has("breakindent")
+  " support for this is spotty
+  set breakindent
+endif
 
 " Searching
 set nohlsearch
