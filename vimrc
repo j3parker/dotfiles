@@ -7,13 +7,17 @@ let mapleader="\<space>"
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-repeat'
+Bundle 'google/vim-maktaba'
 
 " languages
 Bundle 'tpope/vim-markdown'
 Bundle 'wlangstroth/vim-racket'
 Bundle 'groenewege/vim-less'
 Bundle 'mxw/vim-jsx'
-Bundle 'google/vim-ft-bzl'
+
+" Bazel
+Bundle 'bazelbuild/vim-ft-bzl'
+Bundle 'bazelbuild/vim-bazel'
 
 "" haven't used in awhile:
 " cxiw {move somewhere else} cxiw -> exchange words
